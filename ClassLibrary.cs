@@ -21,6 +21,12 @@ namespace ClassLibrary
             if (R == null) R = new Random();
             return R.Next(a, b);
         }
+
+        public static int FastRand(int a, int b)
+        {
+            if (R == null) R = new Random();
+            return R.Next(1, 100);
+        }
     }
 
     public static class Gen
@@ -31,6 +37,16 @@ namespace ClassLibrary
             for (int i = 0; i < A.Length; i++)
             {
                 A[i] = Rnd.RandAtoB(a, b);
+            }
+            return A;
+        }
+
+        public static int[] FastGen ()
+        {
+            int[] A = new int[10];
+            for (int i = 0; i < A.Length; i++)
+            {
+                A[i] = Rnd.RandAtoB(1, 10);
             }
             return A;
         }
