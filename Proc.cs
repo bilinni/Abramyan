@@ -182,12 +182,26 @@ namespace Proc
             }
         }
 
-        public static bool IsPrime(int n)
+        public static int DigitCount(int n)
         {
-            for(int i=n-1; i<2; i--)
+            int count=0;
+            while (n>=10)
             {
-
+                n /= 10;
+                count += 1;
             }
+            return count;
+        }
+
+        public static int DigitN(int n)
+        {
+            int count = 0;
+            while (n >= 10)
+            {
+                n /= 10;
+                count += 1;
+            }
+            return count;
         }
     }
 }
